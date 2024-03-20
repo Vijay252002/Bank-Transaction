@@ -1,0 +1,12 @@
+create database BankTransaction;
+use BankTransaction;
+create table customer(customer_id int primary key auto_increment,FirstName varchar(50),LastName varchar(20),email varchar(30) unique key,mobileNo varchar(10) unique key,DOB varchar(10),Address varchar(200),pancardNo varchar(10) unique key,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,gender varchar(10));
+create table account(account_id int primary key auto_increment,customer_id int,balance float,account_type varchar(30),branch_id varchar(15),AadharNo varchar(12),creditCardNo varchar(15),debitCardNo varchar(15),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,foreign key(customer_id) references customer(customer_id));
+create table transaction(account_id int,transaction_type varchar(50),ReferencesID int unique key auto_increment,debitAmount float,creditAmount float,balance float,DateOfTransaction TIMESTAMP DEFAULT CURRENT_TIMESTAMP,foreign key(account_id) references account(account_id));
+create table branch(branch_id varchar(15) primary key,BankName varchar(30),branchName varchar(30),BankAddress varchar(200));
+create table loginDetails(account_id int,LoginTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+create table manager(name varchar(50),email varchar(50),password varchar(25),bankName varchar(30));
+create table statement(account_id int,statement_number int primary key auto_increment,Time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+create table nominee(account_id int,nominee_id int primary key auto_increment,nomineeName varchar(30),relationship varchar(30),contactNo varchar(10),DOB varchar(10),foreign key(account_id) references account(account_id));
+insert into manager values('vijay','1','1','Canara bank');
+insert into branch value('1000','canara bank','ponnapuram','PO BOX 111 johannesburg 200');

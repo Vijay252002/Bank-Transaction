@@ -54,11 +54,13 @@ String url="jdbc:mysql://localhost:3306/banktransaction";
 conn= DriverManager.getConnection(url,"root","root");
 ```
 ### User Access Setup
--Run the BankTransactionMain.java
+- Run the BankTransactionMain.java
 ### Manager login
 ![Manager login](pictures/customer.png)
 ### Customer login
 ![Customer login](pictures/manager.png)
 ### PDF generation
 ![pdf](pictures/pdf.png)
+#Conclusion
+         The Bank Transaction System offers a comprehensive solution for managing banking operations efficiently and securely. With intuitive user interfaces and robust security measures, both customers and managers can conduct transactions with confidence while enjoying a seamless banking experience.
 

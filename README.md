@@ -58,6 +58,15 @@ conn= DriverManager.getConnection(url,"root","root");
 String pdfDirectory = "D:/jdk-11.0.2/BankTransaction";
      String pdfName = "Transaction.pdf";
 ```
+### Email Sender
+```java
+public EmailSender(String username, String password, String smtpHost, int port) {
+        this.username = username;//email
+        this.password = password;//email password
+        this.smtpHost = smtpHost;
+        this.port = port;
+    }
+```
 ### Structure of database
 BankTransaction Database Structure:
 

@@ -53,6 +53,71 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 String url="jdbc:mysql://localhost:3306/banktransaction";
 conn= DriverManager.getConnection(url,"root","root");
 ```
+### Structure of database
+BankTransaction Database Structure:
+
+Tables:
+- Manager
+  - manager_id: INT (Primary key, auto-increment)
+  - username: VARCHAR(50) (Unique username for login)
+  - password: VARCHAR(50) (Encrypted password)
+  - email: VARCHAR(100) (Email address of the manager)
+  - full_name: VARCHAR(100) (Full name of the manager)
+
+- Customer
+  - customer_id: INT (Primary key, auto-increment)
+  - username: VARCHAR(50) (Unique username for login)
+  - password: VARCHAR(50) (Encrypted password)
+  - email: VARCHAR(100) (Email address of the customer)
+  - full_name: VARCHAR(100) (Full name of the customer)
+  - date_of_birth: DATE (Date of birth of the customer)
+  - mobile_number: VARCHAR(15) (Mobile number of the customer)
+  - aadhar_number: VARCHAR(20) (Aadhar number of the customer)
+  - address: VARCHAR(255) (Address of the customer)
+  - created_at: TIMESTAMP (Timestamp of account creation)
+
+- Account
+  - account_id: INT (Primary key, auto-increment)
+  - customer_id: INT (Foreign key to Customer table)
+  - balance: DECIMAL(10,2) (Current balance of the account)
+  - account_type: VARCHAR(50) (Type of account e.g., savings, current)
+  - branch_id: INT (Foreign key to Branch table)
+  - created_at: TIMESTAMP (Timestamp of account creation)
+
+- Transaction
+  - transaction_id: INT (Primary key, auto-increment)
+  - account_id: INT (Foreign key to Account table)
+  - amount: DECIMAL(10,2) (Amount of the transaction)
+  - transaction_type: VARCHAR(50) (Type of transaction e.g., deposit, withdrawal, transfer)
+  - transaction_date: TIMESTAMP (Timestamp of the transaction)
+  - remarks: VARCHAR(255) (Remarks or description of the transaction)
+
+- LoginDetails
+  - login_id: INT (Primary key, auto-increment)
+  - user_id: INT (Foreign key to Manager or Customer table)
+  - login_time: TIMESTAMP (Timestamp of login)
+  - ip_address: VARCHAR(50) (IP address from which login occurred)
+
+- Nominee
+  - nominee_id: INT (Primary key, auto-increment)
+  - account_id: INT (Foreign key to Account table)
+  - full_name: VARCHAR(100) (Full name of the nominee)
+  - relationship: VARCHAR(50) (Relationship with the account holder)
+  - address: VARCHAR(255) (Address of the nominee)
+  - mobile_number: VARCHAR(15) (Mobile number of the nominee)
+
+- Statement
+  - statement_id: INT (Primary key, auto-increment)
+  - account_id: INT (Foreign key to Account table)
+  - statement_date: DATE (Date of the statement generation)
+  - pdf_location: VARCHAR(255) (Location of the generated PDF file)
+
+- Branch
+  - branch_id: INT (Primary key, auto-increment)
+  - branch_name: VARCHAR(100) (Name of the branch)
+  - address: VARCHAR(255) (Address of the branch)
+  - contact_number: VARCHAR(15) (Contact number of the branch)
+
 ### User Access Setup
 - Run the BankTransactionMain.java
 ### Manager login

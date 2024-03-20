@@ -32,7 +32,7 @@
 
 - **Balance Inquiry**: Check account balances.
 - **Transaction Processing**: Deposit funds, withdraw cash, and transfer money between accounts securely.
-- **Nominee Management**: Add, edit, or remove nominee details to ensure proper asset allocation.
+- **Nominee Management**: Add, edit, or remove nominee details to customer account.
 - **Secure Authentication**: Log in securely using unique credentials to access account information and perform transactions.
 
 ### How to Access
@@ -53,6 +53,11 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 String url="jdbc:mysql://localhost:3306/banktransaction";
 conn= DriverManager.getConnection(url,"root","root");
 ```
+### PDF configuration
+```java
+String pdfDirectory = "D:/jdk-11.0.2/BankTransaction";
+     String pdfName = "Transaction.pdf";
+```
 ### Structure of database
 BankTransaction Database Structure:
 
@@ -66,14 +71,14 @@ Tables:
 
 - Customer
   - customer_id: INT 
-  - username: VARCHAR(50) 
-  - password: VARCHAR(50) 
   - email: VARCHAR(100) 
   - full_name: VARCHAR(100) 
   - date_of_birth: DATE 
   - mobile_number: VARCHAR(15)
   - aadhar_number: VARCHAR(20) 
-  - address: VARCHAR(255) 
+  - address: VARCHAR(255)
+  - PAN:VARCHAR(15)
+  - gender:VARCHAR(10)
   - created_at: TIMESTAMP 
 
 - Account
@@ -83,18 +88,18 @@ Tables:
   - account_type: VARCHAR(50) 
   - branch_id: INT
   - creditCard: VARCHAR(20)
-  - created_at: TIMESTAMP 
+  - created_at: TIMESTAMP
+  - debitCard:VARCHAR(20)
 
 - Transaction
   - transaction_id: INT 
   - account_id: INT 
-  - amount: DECIMAL(10,2) 
+  - debit: DECIMAL(10,2) 
   - transaction_type: VARCHAR(50) 
   - transaction_date: TIMESTAMP 
-  - remarks: VARCHAR(255) 
+  - credit: DECIMAL(10,2)
 
 - LoginDetails
-  - login_id: INT 
   - user_id: INT 
   - login_time: TIMESTAMP 
 

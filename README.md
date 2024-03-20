@@ -56,11 +56,26 @@ conn= DriverManager.getConnection(url,"root","root");
 ### User Access Setup
 - Run the BankTransactionMain.java
 ### Manager login
-![Manager login](pictures/customer.png)
+![Manager login](pictures/manager.png)
+- Manager can access the functionalities of Bank Transactions.
+- Key Functionalities include:
+  - Viewing and editing customer details in the `BankTransaction` database.
+  - Generating pdf statement for transaction for specific customer.
+  - Send email if Aadhar details not updated with bank account.
+  - List the customer login details.
+  - List the customer added for given time.
+  - Access to all databases, including `Customer`, `Account`, and `Transaction`.
 ### Customer login
-![Customer login](pictures/manager.png)
+![Customer login](pictures/customer.png)
+- Customer can access the transaction like deposit,withdrawal.
+- Key functionalities include:
+   - check balance
+   - Add,edit,remove nominee details
+   - Deposit amount
+   - Withdrawal amount
 ### PDF generation
 ![pdf](pictures/pdf.png)
+Monthly statement in the form of pdf 
 # Conclusion
 The Bank Transaction System offers a comprehensive solution for managing banking operations efficiently and securely. With intuitive user interfaces and robust security measures, both customers and managers can conduct transactions with confidence while enjoying a seamless banking experience.
 

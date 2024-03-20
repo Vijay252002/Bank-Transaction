@@ -56,4 +56,5 @@ conn= DriverManager.getConnection(url,"root","root");
 ###User Access Setup
 -Run the BankTransactionMain.java
 ###Manager login
+![Manager login](pictures/customer.png)
 

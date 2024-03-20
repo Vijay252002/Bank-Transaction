@@ -75,7 +75,7 @@ conn= DriverManager.getConnection(url,"root","root");
    - Withdrawal amount
 ### PDF generation
 ![pdf](pictures/pdf.png)
-Monthly statement in the form of pdf 
+- Monthly statement in the form of pdf 
 # Conclusion
 The Bank Transaction System offers a comprehensive solution for managing banking operations efficiently and securely. With intuitive user interfaces and robust security measures, both customers and managers can conduct transactions with confidence while enjoying a seamless banking experience.
 

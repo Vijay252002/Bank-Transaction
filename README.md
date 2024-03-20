@@ -49,12 +49,12 @@ The Bank Transaction System is a user-friendly application designed to manage ba
 
 ### Database Configuration
 
-```java
+
 Class.forName("com.mysql.cj.jdbc.Driver");
 String url="jdbc:mysql://localhost:3306/banktransaction";
 conn= DriverManager.getConnection(url,"root","root");
-###User Access Setup
+### User Access Setup
 -Run the BankTransactionMain.java
-###Manager login
+### Manager login
 ![Manager login](pictures/customer.png)
 

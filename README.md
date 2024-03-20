@@ -57,7 +57,7 @@ conn= DriverManager.getConnection(url,"root","root");
 ### Manager login
 ![Manager login](pictures/customer.png)
 ### Customer login
-![Customer login}(pictures/manager.png)
+![Customer login](pictures/manager.png)
 ### PDF generation
 ![pdf](pictures/pdf.png)
 

@@ -434,7 +434,14 @@ public class ManagerDetails {
 		            // Send the email
 			            emailSender.sendEmail(AadharNotLinkedList.get(i), "ALERT MAIL", message);
 		    }
+		if(AadharNotLinkedList.size()>0)
+	       {
 			System.out.println("Email sent successfully!!");
+	       }
+	       else
+	       {
+	    	   System.out.println("All the csutomers are added their Aadhar details!!");
+	       }
 			}catch(Exception e)
 			{
 				System.out.println(e);

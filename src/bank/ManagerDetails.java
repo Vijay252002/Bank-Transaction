@@ -523,7 +523,7 @@ public class ManagerDetails {
 	        addd.add(Float.toString(interest));
 	        System.out.println("PDF generarting");
 			pdf.display(statement,addd,statementnumber);//pdf generation
-			System.out.println("D:/jdk-11.0.2/BankTransactionhello.pdf");
+			System.out.println("D:/jdk-11.0.2/BankTransactionTransaction.pdf");
 			System.out.println("PDF generated");
 			
 			
